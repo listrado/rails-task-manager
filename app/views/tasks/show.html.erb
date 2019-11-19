@@ -1,0 +1,13 @@
+<h1><%= @task.title %></h1><br>
+<p><%= @task.details %></p><br>
+<p><%= @task.completed ? "task completed" : "task not completed" %></p><br>
+<p><%= "created at #{@task.created_at}" %></p><br>
+<p><%= "time now is #{Time.now.utc}" %></p><br>
+<p><% time = Time.at(Time.now.utc - @task.created_at).getutc %></p>
+<p><%= "it has been #{time.hour}:#{time.min}:#{time.sec} since this task was created (days not tracked yet)" %><br>
+<p><% @task.updated_at %></p><br><br><br>
+
+<%= link_to('delete', destroy_path(@task), method: :delete,
+data: {confirm: "are you sure?"}) %> | <%= link_to('mark as completed', update_path(@task), method: :update,
+data: {confirm: "are you sure?"}) %></p><br>
+<a href="/home">back to home</a><br>

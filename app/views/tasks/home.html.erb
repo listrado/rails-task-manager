@@ -1,0 +1,9 @@
+<h1>TASKS TRACKER</h1><br>
+<p>what do you wnat to do</p><br>
+<a href="/tasks">all tasks</a><br>
+<a href="/new">create new task</a><br>
+<a href="/"></a><br>
+<a href="/"></a><br>
+<% count = 0 %>
+<% @tasks.each { |task| count += 1 unless task.completed} %>
+<p>you have <%= count %> tasks to do</p>
